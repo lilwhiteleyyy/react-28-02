@@ -18,16 +18,40 @@ const title = React.createElement(`h1`, { id: `title` }, `Hello React`)
 //     </div>
 // )
 
-const App = () => {
-    return ( <div><h1>Hello App component</h1>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate ad, cumque, reprehenderit maxime fuga sit id non ipsum quidem pariatur ipsam quam voluptatem consectetur sed accusantium optio ea explicabo cum?</p>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate ad, cumque, reprehenderit maxime fuga sit id non ipsum quidem pariatur ipsam quam voluptatem consectetur sed accusantium optio ea explicabo cum?</p>
-    </div> 
+const Title = () => {
+    return <h1>Hello App component</h1>
+}
+
+const Content = () => {
+    return (
+        <React.Fragment>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Cupiditate ad, cumque, reprehenderit maxime fuga sit id non
+                ipsum quidem pariatur ipsam quam voluptatem consectetur sed
+                accusantium optio ea explicabo cum?
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Quibusdam nobis quos iste odit dolorem possimus explicabo
+                exercitationem magni quam sed!
+            </p>
+        </React.Fragment>
     )
 }
 
+const App = () => {
+    return (
+        <>
+            <Title />
+            <Content />
+        </>
+    )
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
-root.render(<React.StrictMode>
-    <App/>
-</React.StrictMode>)
+root.render(
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>
+)
